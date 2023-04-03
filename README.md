@@ -7,7 +7,7 @@ XSL-FO est XSL Formatting Objects et peut être utilisé pour formater des donn�
 Apache FOP (Formatting Objects Processor) est une application Java qui lit une arborescence d'objets de formatage et restitue les pages résultantes vers une sortie spécifiée.
 # Comment ça fonctionne
 
-![Une image contenant diagramme
+![](https://github.com/nizarbs2508/XSL-FO/blob/main/Aspose.Words.be8ebfab-0804-44de-a95a-6cf966977e06.001.jpeg)
 
 Description générée automatiquement](Aspose.Words.be8ebfab-0804-44de-a95a-6cf966977e06.001.jpeg)
 
