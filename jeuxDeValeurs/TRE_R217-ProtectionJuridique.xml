@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--Créé par nmahraz, le 02/12/2022-->
-<RetrieveValueSetResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ihe:iti:svs:2008 SVS.xsd" xmlns="urn:ihe:iti:svs:2008"><ValueSet id="1.2.250.1.213.1.1.4.327" displayName="TRE_R217-ProtectionJuridique" version="test"><ConceptList><Concept code="TUTEUR" displayName="Tuteur" codeSystem="1.2.250.1.213.1.1.4.327" dateValid="20160518000000" dateFin=""/><Concept code="CURATEUR" displayName="Curateur" codeSystem="1.2.250.1.213.1.1.4.327" dateValid="20160518000000" dateFin=""/><Concept code="MSVG" displayName="Mandataire de sauvegarde" codeSystem="1.2.250.1.213.1.1.4.327" dateValid="20160518000000" dateFin=""/></ConceptList></ValueSet></RetrieveValueSetResponse>
