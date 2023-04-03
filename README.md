@@ -1,17 +1,17 @@
-﻿Génération PDF avec XSL-FO et FOP
+# Génération PDF avec XSL-FO et FOP
 
 
-# Introduction
+## Introduction
 XSL-FO est XSL Formatting Objects et peut être utilisé pour formater des données XML.
 
 Apache FOP (Formatting Objects Processor) est une application Java qui lit une arborescence d'objets de formatage et restitue les pages résultantes vers une sortie spécifiée.
-# Comment ça fonctionne
+## Comment ça fonctionne
 
 ![](https://github.com/nizarbs2508/XSL-FO/blob/main/Aspose.Words.be8ebfab-0804-44de-a95a-6cf966977e06.001.jpeg)
 
 Description générée automatiquement](Aspose.Words.be8ebfab-0804-44de-a95a-6cf966977e06.001.jpeg)
 
-# Solutions pour la génération d’un document PDF
+## Solutions pour la génération d’un document PDF
 La feuille de style créé par l’ANS contient deux mécanismes :
 
 - Un mécanisme qui génère la feuille de style standard pour afficher les documents CDA en mode web avec un désigne qui correspond au désigne de HL7.
@@ -35,7 +35,7 @@ J4L utilise quatre fichiers jars pour générer la Datamatrix ou même un code �
 
 Notre solution est basé alors sur **XSL-FO** pour construire et structurer la feuille de style, **FOP** pour générer le fichier PDF et  **RBarcode de J4L** pour générer la Datamatrix.
 
-# Procédure de génération d’un fichier PDF
+## Procédure de génération d’un fichier PDF
 
 - Dézipper le fichier fop-2.8.zip livré avec la feuille de style ANS. Nous avons utilisé la version 2.8 de FOP pour la génération du PDF. 
 
@@ -59,7 +59,7 @@ Le dossier FOP contient mise à part ces fichiers jar, les quatre jars mentionn�
 
 - Un fichier PDF est généré en sortie après le lancement de la commande.
 
-# Conclusion
+## Conclusion
 
 Toutes les solutions de génération de fichier PDF avec XSL sont maintenable et facile à implémenté avec des bonnes connaissance en XSLT et XSL-FO. Notre choix a été fait sur XSL-FO + FOP vu que 
 
