@@ -9,7 +9,6 @@ Apache FOP (Formatting Objects Processor) est une application Java qui lit une a
 
 ![](https://github.com/nizarbs2508/XSL-FO/blob/main/img.jpeg)
 
-Description générée automatiquement](Aspose.Words.be8ebfab-0804-44de-a95a-6cf966977e06.001.jpeg)
 
 ## Solutions pour la génération d’un document PDF
 La feuille de style créé par l’ANS contient deux mécanismes :
