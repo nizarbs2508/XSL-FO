@@ -280,16 +280,6 @@
 
     <xd:doc>
         <xd:desc>
-            <xd:p>Currently unused. Unsupported by Internet Explorer. Text encoding to render the
-                output in. Defaults to UTF-8 which is fine for most environments. Could change into
-                more localized encodings such as cp-1252 (Windows Latin 1), iso-8859-1 (Latin 1), or
-                shift-jis (Japanese Kanji table))</xd:p>
-        </xd:desc>
-    </xd:doc>
-    <xsl:param name="textEncoding" select="'utf-8'"/>
-
-    <xd:doc>
-        <xd:desc>
             <xd:p>Boolean value for whether the result document may contain JavaScript. Some
                 environments forbid the use of JavaScript. Without JavaScript, certain more dynamic
                 features may not work.</xd:p>
@@ -550,20 +540,6 @@
     </xd:doc>
     <xsl:variable name="textLangDefaultPartLowerCase"
         select="substring($textLangDefaultLowerCase, 1, 2)"/>
-
-    <xd:doc>
-        <xd:desc>
-            <xd:p>String processing variable. Lower-case alphabet</xd:p>
-        </xd:desc>
-    </xd:doc>
-    <xsl:variable name="lc" select="'abcdefghijklmnopqrstuvwxyz'"/>
-
-    <xd:doc>
-        <xd:desc>
-            <xd:p>String processing variable. Upper-case alphabet</xd:p>
-        </xd:desc>
-    </xd:doc>
-    <xsl:variable name="uc" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"/>
 
     <xd:doc>
         <xd:desc>
@@ -1303,7 +1279,7 @@
 
     <xd:doc>
         <xd:desc>
-            <xd:p>Handle nonXMLBody</xd:p>
+            <xd:p>Handle nonXMLBody and observationMedia</xd:p>
         </xd:desc>
         <xd:param name="usemap"/>
     </xd:doc>
@@ -2718,7 +2694,7 @@
 
     <xd:doc>
         <xd:desc>
-            <xd:p>Handle section informant </xd:p>
+            <xd:p>Handle section informant confiance</xd:p>
         </xd:desc>
     </xd:doc>
     <!-- Extension FR -->
@@ -3045,10 +3021,9 @@
     </xsl:template>
 
 
-
     <xd:doc>
         <xd:desc>
-            <xd:p>Handle section informant </xd:p>
+            <xd:p>Handle section informant</xd:p>
         </xd:desc>
     </xd:doc>
     <!-- Extension FR -->
@@ -3379,7 +3354,7 @@
 
     <xd:doc>
         <xd:desc>
-            <xd:p>Handle section subject </xd:p>
+            <xd:p>Handle section subject</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:template name="section-subject">
@@ -3573,7 +3548,7 @@
 
     <xd:doc>
         <xd:desc>
-            <xd:p>Puts a div around the Section.text and hands it off to other templates</xd:p>
+            <xd:p>Puts a div or fo:block around the Section.text and hands it off to other templates</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:template name="section-text">
@@ -3591,7 +3566,7 @@
 
     <xd:doc>
         <xd:desc>
-            <xd:p>Handle paragraph </xd:p>
+            <xd:p>Handle paragraph or fo:block</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:template match="hl7:paragraph">
@@ -3611,7 +3586,7 @@
 
     <xd:doc>
         <xd:desc>
-            <xd:p>Handle linkHtml </xd:p>
+            <xd:p>Handle linkHtml or fo:basic-link</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:template match="hl7:linkHtml">
@@ -3633,7 +3608,7 @@
 
     <xd:doc>
         <xd:desc>
-            <xd:p>Handle pre</xd:p>
+            <xd:p>Handle pre or fo:block</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:template match="hl7:pre">
@@ -3906,7 +3881,7 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc>Handle table and constituents of table</xd:desc>
+        <xd:desc>Handle table</xd:desc>
     </xd:doc>
     <xsl:template match="hl7:table">
         <!-- Extension FR : PDF -->
@@ -3926,7 +3901,7 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc>Handle table and constituents of table</xd:desc>
+        <xd:desc>Handle thead of table</xd:desc>
     </xd:doc>
     <xsl:template match="hl7:thead">
         <!-- Extension FR : PDF -->
@@ -3944,7 +3919,7 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc>Handle table and constituents of table</xd:desc>
+        <xd:desc>Handle tfoot of table</xd:desc>
     </xd:doc>
     <xsl:template match="hl7:tfoot">
         <!-- Extension FR : PDF -->
@@ -3960,7 +3935,7 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc>Handle table and constituents of table</xd:desc>
+        <xd:desc>Handle tbody of table</xd:desc>
     </xd:doc>
     <xsl:template match="hl7:tbody">
         <!-- Extension FR : PDF -->
@@ -3978,7 +3953,7 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc>Handle table and constituents of table</xd:desc>
+        <xd:desc>Handle colgroup of table</xd:desc>
     </xd:doc>
     <xsl:template match="hl7:colgroup">
         <!-- Extension FR : PDF -->
@@ -3994,7 +3969,7 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc>Handle table and constituents of table</xd:desc>
+        <xd:desc>Handle column of table</xd:desc>
     </xd:doc>
     <xsl:template match="hl7:col">
         <!-- Extension FR : PDF -->
@@ -4010,7 +3985,7 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc>Handle table and constituents of table</xd:desc>
+        <xd:desc>Handle line of table</xd:desc>
     </xd:doc>
     <xsl:template match="hl7:tr">
         <!-- Extension FR : PDF -->
@@ -4028,7 +4003,7 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc>Handle table and constituents of table</xd:desc>
+        <xd:desc>Handle line head of table</xd:desc>
     </xd:doc>
     <xsl:template match="hl7:th">
         <!-- Extension FR : PDF -->
@@ -4062,7 +4037,7 @@
 
 
     <xd:doc>
-        <xd:desc>Handle table and constituents of table</xd:desc>
+        <xd:desc>Handle column of table</xd:desc>
     </xd:doc>
     <xsl:template match="hl7:td">
         <!-- Extension FR : PDF -->
@@ -4096,7 +4071,7 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc>Handle table and constituents of table</xd:desc>
+        <xd:desc>Handle caption of table</xd:desc>
     </xd:doc>
     <xsl:template match="hl7:table/hl7:caption">
         <!-- Extension FR : PDF -->
@@ -5493,29 +5468,6 @@
         </xsl:if>
     </xsl:template>
 
-    <xd:doc>
-        <xd:desc/>
-        <xd:param name="asgnEntity"/>
-    </xd:doc>
-    <xsl:template name="show-assignedEntity-orga">
-        <xsl:param name="asgnEntity"/>
-        <xsl:if test="$asgnEntity/hl7:representedOrganization/hl7:name">
-            <xsl:value-of select="$asgnEntity/hl7:representedOrganization/hl7:name"/>
-            <xsl:if
-                test="$asgnEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:name">
-                <xsl:if test="not(contains($vendor, 'Saxonica'))">
-                    <br/>
-                </xsl:if>
-                <xsl:if test="contains($vendor, 'Saxonica')">
-                    <fo:block line-height="0.1cm">&#160;</fo:block>
-                </xsl:if>
-                <xsl:text>au sein de : </xsl:text>
-                <xsl:value-of
-                    select="$asgnEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:name"
-                />
-            </xsl:if>
-        </xsl:if>
-    </xsl:template>
 
     <xd:doc>
         <xd:desc>
@@ -5543,27 +5495,6 @@
         </xsl:choose>
     </xsl:template>
 
-    <xd:doc>
-        <xd:desc>
-            <xd:p>Handle confidentiality</xd:p>
-        </xd:desc>
-    </xd:doc>
-    <xsl:template name="confidentiality">
-        <table class="header_table">
-            <tbody>
-                <td class="td_label">
-                    <xsl:call-template name="getLocalizedString">
-                        <xsl:with-param name="key" select="'Confidentiality'"/>
-                    </xsl:call-template>
-                </td>
-                <td style="width: 80%;">
-                    <xsl:call-template name="show-code-set">
-                        <xsl:with-param name="in" select="hl7:confidentialityCode"/>
-                    </xsl:call-template>
-                </td>
-            </tbody>
-        </table>
-    </xsl:template>
 
     <xd:doc>
         <xd:desc>
@@ -5891,7 +5822,9 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc/>
+        <xd:desc>
+            <xd:p>Handle CDA Header authors</xd:p>
+        </xd:desc>
     </xd:doc>
     <xsl:template name="show-authors">
         <xsl:for-each select="hl7:author">
@@ -5951,7 +5884,9 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc/>
+        <xd:desc>
+            <xd:p>Handle CDA Header actes</xd:p>
+        </xd:desc>
     </xd:doc>
     <xsl:template name="show-actes">
         <xsl:for-each select="hl7:documentationOf">
@@ -6088,9 +6023,10 @@
     </xsl:template>
 
 
-
     <xd:doc>
-        <xd:desc/>
+        <xd:desc>
+            <xd:p>Handle CDA Header represented organization</xd:p>
+        </xd:desc>
     </xd:doc>
     <xsl:template name="show-represented-organization">
         <xsl:for-each select="hl7:componentOf/hl7:encompassingEncounter">
@@ -6105,8 +6041,11 @@
         </xsl:for-each>
     </xsl:template>
 
+
     <xd:doc>
-        <xd:desc/>
+        <xd:desc>
+            <xd:p>Handle CDA Header effective time</xd:p>
+        </xd:desc>
     </xd:doc>
     <xsl:template name="show-effective-time">
         <xsl:for-each select="hl7:componentOf">
@@ -6180,6 +6119,7 @@
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -6723,6 +6663,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Handle CDA Header custodian</xd:p>
@@ -6781,6 +6722,7 @@
             </table>
         </xsl:for-each>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -7438,6 +7380,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Handle CDA Header inFulfillmentOf</xd:p>
@@ -7567,6 +7510,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Handle CDA Header informant</xd:p>
@@ -7638,6 +7582,7 @@
             </table>
         </xsl:for-each>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -7760,6 +7705,7 @@
             </table>
         </xsl:for-each>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -8391,6 +8337,7 @@
             </xsl:if>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -10817,6 +10764,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Handle CDA Header guardian</xd:p>
@@ -11131,6 +11079,7 @@
             </xsl:if>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -12026,6 +11975,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Handle CDA Header relatedDocument</xd:p>
@@ -12067,6 +12017,7 @@
             </table>
         </xsl:for-each>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -12159,6 +12110,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Handle CDA Header assignedEntity</xd:p>
@@ -12212,6 +12164,7 @@
         </xsl:choose>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Handle CDA Header relatedEntity</xd:p>
@@ -12245,119 +12198,6 @@
         </xsl:choose>
     </xsl:template>
 
-    <xd:doc>
-        <xd:desc>
-            <xd:p>Handle CDA Header associatedEntity</xd:p>
-        </xd:desc>
-        <xd:param name="assoEntity">Contains the associatedEntity element</xd:param>
-    </xd:doc>
-    <xsl:template name="show-associatedEntity">
-        <xsl:param name="assoEntity"/>
-        <xsl:if test="$assoEntity/hl7:associatedPerson">
-            <xsl:call-template name="show-name-set">
-                <xsl:with-param name="in" select="$assoEntity/hl7:associatedPerson/hl7:name"/>
-                <xsl:with-param name="sep" select="'br'"/>
-            </xsl:call-template>
-            <xsl:if test="$assoEntity/hl7:assignedPerson/hl7:desc">
-                <div>
-                    <xsl:value-of select="$assoEntity/hl7:assignedPerson/hl7:desc"/>
-                </div>
-            </xsl:if>
-            <xsl:if test="$assoEntity/hl7:assignedPerson/hl7:birthTime">
-                <xsl:text> </xsl:text>
-                <xsl:call-template name="getLocalizedString">
-                    <xsl:with-param name="key" select="'birthTimeLong'"/>
-                </xsl:call-template>
-                <xsl:text> </xsl:text>
-                <xsl:call-template name="show-timestamp">
-                    <xsl:with-param name="in" select="$assoEntity/hl7:assignedPerson/hl7:birthTime"
-                    />
-                </xsl:call-template>
-            </xsl:if>
-        </xsl:if>
-        <xsl:if test="$assoEntity/hl7:code">
-            <xsl:if
-                test="$assoEntity/hl7:associatedPerson/hl7:name or $assoEntity/hl7:associatedPerson/hl7:id">
-                <xsl:text>, </xsl:text>
-            </xsl:if>
-            <xsl:call-template name="show-code-set">
-                <xsl:with-param name="in" select="$assoEntity/hl7:code"/>
-            </xsl:call-template>
-        </xsl:if>
-        <xsl:if test="$assoEntity/hl7:id">
-            <xsl:if test="$assoEntity/hl7:associatedPerson/hl7:name">
-                <xsl:text>, </xsl:text>
-            </xsl:if>
-            <xsl:call-template name="getLocalizedString">
-                <xsl:with-param name="key" select="'id'"/>
-                <xsl:with-param name="post" select="': '"/>
-            </xsl:call-template>
-            <xsl:call-template name="show-id-set">
-                <xsl:with-param name="in" select="$assoEntity/hl7:id"/>
-                <xsl:with-param name="sep" select="'br'"/>
-            </xsl:call-template>
-        </xsl:if>
-        <xsl:if test="$assoEntity/hl7:scopingOrganization">
-            <xsl:if test="not(contains($vendor, 'Saxonica'))">
-                <br/>
-            </xsl:if>
-            <xsl:if test="contains($vendor, 'Saxonica')">
-                <fo:block line-height="0.1cm">&#160;</fo:block>
-            </xsl:if>
-            <xsl:call-template name="getLocalizedString">
-                <xsl:with-param name="key" select="'organization'"/>
-                <xsl:with-param name="post" select="': '"/>
-            </xsl:call-template>
-        </xsl:if>
-        <xsl:choose>
-            <xsl:when test="$assoEntity/hl7:scopingOrganization/hl7:name">
-                <xsl:call-template name="show-name-set">
-                    <xsl:with-param name="in" select="$assoEntity/hl7:scopingOrganization/hl7:name"
-                    />
-                </xsl:call-template>
-                <xsl:if test="$assoEntity/hl7:scopingOrganization/hl7:standardIndustryClassCode">
-                    <xsl:value-of
-                        select="$assoEntity/hl7:scopingOrganization/hl7:standardIndustryClassCode/@displayName"/>
-                    <xsl:call-template name="getLocalizedString">
-                        <xsl:with-param name="pre" select="' '"/>
-                        <xsl:with-param name="key" select="'code'"/>
-                        <xsl:with-param name="post" select="':'"/>
-                    </xsl:call-template>
-                    <xsl:call-template name="show-code-set">
-                        <xsl:with-param name="in"
-                            select="$assoEntity/hl7:scopingOrganization/hl7:standardIndustryClassCode/@code"
-                        />
-                    </xsl:call-template>
-                </xsl:if>
-                <xsl:text>, </xsl:text>
-            </xsl:when>
-            <xsl:when test="$assoEntity/hl7:scopingOrganization/hl7:standardIndustryClassCode">
-                <xsl:value-of
-                    select="$assoEntity/hl7:scopingOrganization/hl7:standardIndustryClassCode/@displayName"/>
-                <xsl:call-template name="getLocalizedString">
-                    <xsl:with-param name="pre" select="' '"/>
-                    <xsl:with-param name="key" select="'code'"/>
-                    <xsl:with-param name="post" select="':'"/>
-                </xsl:call-template>
-                <xsl:call-template name="show-code-set">
-                    <xsl:with-param name="in"
-                        select="$assoEntity/hl7:scopingOrganization/hl7:standardIndustryClassCode/@code"
-                    />
-                </xsl:call-template>
-                <xsl:text>, </xsl:text>
-            </xsl:when>
-        </xsl:choose>
-        <xsl:if test="$assoEntity/hl7:scopingOrganization/hl7:id">
-            <xsl:call-template name="getLocalizedString">
-                <xsl:with-param name="key" select="'id'"/>
-                <xsl:with-param name="post" select="': '"/>
-            </xsl:call-template>
-            <xsl:call-template name="show-id-set">
-                <xsl:with-param name="in" select="$assoEntity/hl7:scopingOrganization/hl7:id"/>
-                <xsl:with-param name="sep" select="'br'"/>
-            </xsl:call-template>
-        </xsl:if>
-    </xsl:template>
 
     <xd:doc>
         <xd:desc>
@@ -12413,6 +12253,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Handle contactInfo. Address and telecom</xd:p>
@@ -12439,6 +12280,7 @@
         </xsl:call-template>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Handle contactInfo. Address and telecom</xd:p>
@@ -12452,6 +12294,7 @@
             <xsl:with-param name="sep" select="'br'"/>
         </xsl:call-template>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -12467,6 +12310,7 @@
         </xsl:call-template>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Handle contactInfo. Address and telecom</xd:p>
@@ -12480,6 +12324,7 @@
             <xsl:with-param name="sep" select="'br'"/>
         </xsl:call-template>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -12524,7 +12369,6 @@
             <xsl:with-param name="sep" select="', '"/>
         </xsl:call-template>
     </xsl:template>
-
 
 
     <xd:doc>
@@ -12603,6 +12447,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>Handle one line of birth/death/multiple birth data</xd:desc>
         <xd:param name="in">One element with the child elements birthTime, deceasedInd,
@@ -12646,18 +12491,8 @@
         </xsl:if>
     </xsl:template>
 
-    <xd:doc>
-        <xd:desc>
-            <xd:p>Get localized string for a classCode</xd:p>
-        </xd:desc>
-        <xd:param name="clsCode">Class code string</xd:param>
-    </xd:doc>
-    <xsl:template name="show-actClassCode">
-        <xsl:param name="clsCode"/>
-        <xsl:call-template name="getLocalizedString">
-            <xsl:with-param name="key" select="concat('2.16.840.1.113883.5.6-', $clsCode)"/>
-        </xsl:call-template>
-    </xsl:template>
+
+
 
     <xd:doc>
         <xd:desc>
@@ -12672,18 +12507,7 @@
         </xsl:call-template>
     </xsl:template>
 
-    <xd:doc>
-        <xd:desc>
-            <xd:p>Get localized string for a typeCode from a participation</xd:p>
-        </xd:desc>
-        <xd:param name="ptype">Participation type string</xd:param>
-    </xd:doc>
-    <xsl:template name="show-participationType">
-        <xsl:param name="ptype"/>
-        <xsl:call-template name="getLocalizedString">
-            <xsl:with-param name="key" select="concat('2.16.840.1.113883.5.90-', $ptype)"/>
-        </xsl:call-template>
-    </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -12774,6 +12598,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Show elements with datatype II separated with the value in 'sep'. Calls <xd:ref
@@ -12844,6 +12669,7 @@
             </xsl:choose>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -12961,6 +12787,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Show element with datatype II</xd:p>
@@ -13021,6 +12848,7 @@
             </span>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -13138,103 +12966,7 @@
         </xsl:if>
     </xsl:template>
 
-    <xd:doc>
-        <xd:desc>
-            <xd:p>Show elements with datatype INT separated with the value in 'sep'. Calls <xd:ref
-                    name="show-integer" type="template">show-integer</xd:ref>
-            </xd:p>
-        </xd:desc>
-        <xd:param name="in">Set of 0 to * elements</xd:param>
-        <xd:param name="sep">Separator between output of different elements. Default ', ' and
-            special is 'br' which generates an HTML br tag</xd:param>
-    </xd:doc>
-    <xsl:template name="show-integer-set">
-        <xsl:param name="in"/>
-        <xsl:param name="sep" select="', '"/>
-        <xsl:if test="$in">
-            <xsl:choose>
-                <!-- DTr1 -->
-                <xsl:when test="count($in) > 1">
-                    <xsl:for-each select="$in">
-                        <xsl:call-template name="show-integer">
-                            <xsl:with-param name="in" select="."/>
-                        </xsl:call-template>
-                        <xsl:if test="position() != last()">
-                            <xsl:choose>
-                                <xsl:when test="$sep = 'br'">
-                                    <xsl:if test="not(contains($vendor, 'Saxonica'))">
-                                        <br/>
-                                    </xsl:if>
-                                    <xsl:if test="contains($vendor, 'Saxonica')">
-                                        <fo:block line-height="0.1cm">&#160;</fo:block>
-                                    </xsl:if>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:value-of select="$sep"/>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </xsl:if>
-                    </xsl:for-each>
-                </xsl:when>
-                <!-- DTr2 -->
-                <xsl:when test="$in[hl7:item]">
-                    <xsl:for-each select="$in/hl7:item">
-                        <xsl:call-template name="show-integer">
-                            <xsl:with-param name="in" select="."/>
-                        </xsl:call-template>
-                        <xsl:if test="position() != last()">
-                            <xsl:choose>
-                                <xsl:when test="$sep = 'br'">
-                                    <xsl:if test="not(contains($vendor, 'Saxonica'))">
-                                        <br/>
-                                    </xsl:if>
-                                    <xsl:if test="contains($vendor, 'Saxonica')">
-                                        <fo:block line-height="0.1cm">&#160;</fo:block>
-                                    </xsl:if>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:value-of select="$sep"/>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </xsl:if>
-                    </xsl:for-each>
-                </xsl:when>
-                <!-- DTr1 or DTr2 -->
-                <xsl:otherwise>
-                    <xsl:call-template name="show-integer">
-                        <xsl:with-param name="in" select="$in"/>
-                    </xsl:call-template>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
-    </xsl:template>
 
-    <xd:doc>
-        <xd:desc>
-            <xd:p>Show element with datatype INT</xd:p>
-        </xd:desc>
-        <xd:param name="in">One element, possibly out of a set</xd:param>
-    </xd:doc>
-    <xsl:template name="show-integer">
-        <xsl:param name="in"/>
-        <xsl:if test="$in">
-            <xsl:choose>
-                <xsl:when test="$in[@value]">
-                    <xsl:value-of select="$in/@value"/>
-                </xsl:when>
-            </xsl:choose>
-            <xsl:if test="$in[@value]">
-                <xsl:text> </xsl:text>
-            </xsl:if>
-            <xsl:if test="$in[@nullFlavor]">
-                <xsl:text>(</xsl:text>
-                <xsl:call-template name="show-nullFlavor">
-                    <xsl:with-param name="in" select="$in/@nullFlavor"/>
-                </xsl:call-template>
-                <xsl:text>)</xsl:text>
-            </xsl:if>
-        </xsl:if>
-    </xsl:template>
 
     <xd:doc>
         <xd:desc>
@@ -13313,6 +13045,7 @@
             </xsl:choose>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -13432,6 +13165,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Show elements with datatype EN, ON, PN or TN separated with the value in 'sep'.
@@ -13501,6 +13235,7 @@
             </xsl:choose>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -13592,6 +13327,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Show elements with datatype AD separated with the value in 'sep'. Calls <xd:ref
@@ -13661,6 +13397,7 @@
             </xsl:choose>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -13802,6 +13539,7 @@
             </xsl:choose>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -14281,7 +14019,6 @@
             </xsl:for-each>
         </xsl:if>
     </xsl:template>
-
 
 
     <xd:doc>
@@ -15272,130 +15009,6 @@
         </xsl:if>
     </xsl:template>
 
-    <xd:doc>
-        <xd:desc>
-            <xd:p>Show elements with datatype QTY/PQ separated with the value in 'sep'. Calls
-                    <xd:ref name="show-quantity" type="template">show-quantity</xd:ref>
-            </xd:p>
-        </xd:desc>
-        <xd:param name="in">Set of 0 to * elements</xd:param>
-        <xd:param name="sep">Separator between output of different elements. Default ', ' and
-            special is 'br' which generates an HTML br tag</xd:param>
-    </xd:doc>
-    <xsl:template name="show-quantity-set">
-        <xsl:param name="in"/>
-        <xsl:param name="sep" select="', '"/>
-        <xsl:if test="$in">
-            <xsl:choose>
-                <!-- DTr1 -->
-                <xsl:when test="count($in) &gt; 1">
-                    <xsl:for-each select="$in">
-                        <xsl:call-template name="show-quantity">
-                            <xsl:with-param name="in" select="."/>
-                        </xsl:call-template>
-                        <xsl:if test="position() != last()">
-                            <xsl:choose>
-                                <xsl:when test="$sep = 'br'">
-                                    <xsl:if test="not(contains($vendor, 'Saxonica'))">
-                                        <br/>
-                                    </xsl:if>
-                                    <xsl:if test="contains($vendor, 'Saxonica')">
-                                        <fo:block line-height="0.1cm">&#160;</fo:block>
-                                    </xsl:if>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:value-of select="$sep"/>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </xsl:if>
-                    </xsl:for-each>
-                </xsl:when>
-                <!-- DTr2 -->
-                <xsl:when test="$in[hl7:item]">
-                    <xsl:for-each select="$in/hl7:item">
-                        <xsl:call-template name="show-quantity">
-                            <xsl:with-param name="in" select="."/>
-                        </xsl:call-template>
-                        <xsl:if test="position() != last()">
-                            <xsl:choose>
-                                <xsl:when test="$sep = 'br'">
-                                    <xsl:if test="not(contains($vendor, 'Saxonica'))">
-                                        <br/>
-                                    </xsl:if>
-                                    <xsl:if test="contains($vendor, 'Saxonica')">
-                                        <fo:block line-height="0.1cm">&#160;</fo:block>
-                                    </xsl:if>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:value-of select="$sep"/>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </xsl:if>
-                    </xsl:for-each>
-                </xsl:when>
-                <!-- DTr1 or DTr2 -->
-                <xsl:otherwise>
-                    <xsl:call-template name="show-quantity">
-                        <xsl:with-param name="in" select="$in"/>
-                    </xsl:call-template>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
-    </xsl:template>
-
-    <xd:doc>
-        <xd:desc>
-            <xd:p>Show element with datatype QTY/PQ</xd:p>
-        </xd:desc>
-        <xd:param name="in">One element, possibly out of a set</xd:param>
-    </xd:doc>
-    <xsl:template name="show-quantity">
-        <xsl:param name="in"/>
-        <xsl:if test="$in">
-            <xsl:choose>
-                <xsl:when test="$in[@value]">
-                    <xsl:value-of select="$in/@value"/>
-                    <xsl:text> </xsl:text>
-                    <xsl:choose>
-                        <xsl:when test="$in[not(@unit) or @unit = '1'][@value = 1]">
-                            <xsl:call-template name="getLocalizedString">
-                                <xsl:with-param name="key" select="'Unit'"/>
-                            </xsl:call-template>
-                        </xsl:when>
-                        <xsl:when test="$in[not(@unit) or @unit = '1'][@value > 1]">
-                            <xsl:call-template name="getLocalizedString">
-                                <xsl:with-param name="key" select="'Units'"/>
-                            </xsl:call-template>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="$in/@unit"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:when>
-            </xsl:choose>
-            <xsl:if test="$in[@value | @unit]">
-                <xsl:text> </xsl:text>
-            </xsl:if>
-            <xsl:if test="$in[@nullFlavor]">
-                <xsl:text>(</xsl:text>
-                <xsl:call-template name="show-nullFlavor">
-                    <xsl:with-param name="in" select="$in/@nullFlavor"/>
-                </xsl:call-template>
-                <xsl:text>)</xsl:text>
-            </xsl:if>
-            <xsl:for-each select="$in/*[local-name() = 'translation']">
-                <div style="margin-left: 2em;">
-                    <xsl:call-template name="getLocalizedString">
-                        <xsl:with-param name="key" select="local-name()"/>
-                        <xsl:with-param name="post" select="' '"/>
-                    </xsl:call-template>
-                    <xsl:call-template name="show-code-set">
-                        <xsl:with-param name="in" select="."/>
-                    </xsl:call-template>
-                </div>
-            </xsl:for-each>
-        </xsl:if>
-    </xsl:template>
 
     <xd:doc>
         <xd:desc>Show element with datatype IVL_TS</xd:desc>
@@ -15488,10 +15101,11 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Show elements with datatype TEL or URI separated with the value in 'sep'. Calls
-                    <xd:ref name="show-telecom" type="template">show-telecom</xd:ref></xd:p>
+                <xd:ref name="show-telecom-domicile" type="template">show-telecom-domicile</xd:ref></xd:p>
         </xd:desc>
         <xd:param name="in">Set of 0 to * elements</xd:param>
         <xd:param name="sep">Separator between output of different elements. Default ', ' and
@@ -15528,10 +15142,11 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Show elements with datatype TEL or URI separated with the value in 'sep'. Calls
-                    <xd:ref name="show-telecom" type="template">show-telecom</xd:ref></xd:p>
+                <xd:ref name="show-telecom-mobile" type="template">show-telecom-mobile</xd:ref></xd:p>
         </xd:desc>
         <xd:param name="in">Set of 0 to * elements</xd:param>
         <xd:param name="sep">Separator between output of different elements. Default ', ' and
@@ -15568,10 +15183,11 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Show elements with datatype TEL or URI separated with the value in 'sep'. Calls
-                    <xd:ref name="show-telecom" type="template">show-telecom</xd:ref></xd:p>
+                <xd:ref name="show-telecom-email" type="template">show-telecom-email</xd:ref></xd:p>
         </xd:desc>
         <xd:param name="in">Set of 0 to * elements</xd:param>
         <xd:param name="sep">Separator between output of different elements. Default ', ' and
@@ -15607,7 +15223,6 @@
             </xsl:choose>
         </xsl:if>
     </xsl:template>
-
 
 
     <xd:doc>
@@ -15680,6 +15295,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Show element with datatype TEL or URI</xd:p>
@@ -15738,7 +15354,7 @@
 
     <xd:doc>
         <xd:desc>
-            <xd:p>Show element with datatype TEL or URI</xd:p>
+            <xd:p>Show element with datatype TEL or URI Home</xd:p>
         </xd:desc>
         <xd:param name="in">One element, possibly out of a set</xd:param>
     </xd:doc>
@@ -15770,9 +15386,10 @@
         </xsl:choose>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
-            <xd:p>Show element with datatype TEL or URI</xd:p>
+            <xd:p>Show element with datatype TEL or URI Work</xd:p>
         </xd:desc>
         <xd:param name="in">One element, possibly out of a set</xd:param>
     </xd:doc>
@@ -15804,9 +15421,10 @@
         </xsl:choose>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
-            <xd:p>Show element with datatype TEL or URI</xd:p>
+            <xd:p>Show element with datatype TEL or URI emergency</xd:p>
         </xd:desc>
         <xd:param name="in">One element, possibly out of a set</xd:param>
     </xd:doc>
@@ -15841,7 +15459,7 @@
 
     <xd:doc>
         <xd:desc>
-            <xd:p>Show element with datatype TEL or URI</xd:p>
+            <xd:p>Show element with datatype TEL or URI mobile</xd:p>
         </xd:desc>
         <xd:param name="in">One element, possibly out of a set</xd:param>
     </xd:doc>
@@ -15878,9 +15496,10 @@
         </xsl:choose>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
-            <xd:p>Show element with datatype TEL or URI</xd:p>
+            <xd:p>Show element with datatype TEL or URI email</xd:p>
         </xd:desc>
         <xd:param name="in">One element, possibly out of a set</xd:param>
     </xd:doc>
@@ -15940,9 +15559,10 @@
         </xsl:call-template>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
-            <xd:p>Show element with datatype TS</xd:p>
+            <xd:p>Show element with datatype TS document</xd:p>
         </xd:desc>
         <xd:param name="in">One element, possibly out of a set</xd:param>
         <xd:param name="part">value to tell if we want the full thing 'datetime', date only 'date',
@@ -15958,9 +15578,10 @@
         </xsl:call-template>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
-            <xd:p>Show element with datatype TS</xd:p>
+            <xd:p>Show element with datatype TS patient</xd:p>
         </xd:desc>
         <xd:param name="in">One element, possibly out of a set</xd:param>
         <xd:param name="part">value to tell if we want the full thing 'datetime', date only 'date',
@@ -15975,9 +15596,10 @@
         </xsl:call-template>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
-            <xd:p>Show element with datatype TS</xd:p>
+            <xd:p>Show element with datatype TS matrix</xd:p>
         </xd:desc>
         <xd:param name="in">One element, possibly out of a set</xd:param>
         <xd:param name="part">value to tell if we want the full thing 'datetime', date only 'date',
@@ -16063,6 +15685,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Show element with datatype ST</xd:p>
@@ -16091,31 +15714,7 @@
         </xsl:if>
     </xsl:template>
 
-    <xd:doc>
-        <xd:desc>
-            <xd:p>Show element with datatype BL/BN</xd:p>
-        </xd:desc>
-        <xd:param name="in">One element, possibly out of a set</xd:param>
-    </xd:doc>
-    <xsl:template name="show-boolean">
-        <xsl:param name="in"/>
-        <xsl:if test="$in">
-            <xsl:choose>
-                <!-- DTr1 and DTr2 -->
-                <xsl:when test="$in[@value]">
-                    <xsl:call-template name="getLocalizedString">
-                        <xsl:with-param name="key" select="concat('boolean-', $in/@value)"/>
-                    </xsl:call-template>
-                </xsl:when>
-                <!-- DTr1 and DTr2 -->
-                <xsl:when test="$in[@nullFlavor]">
-                    <xsl:call-template name="show-nullFlavor">
-                        <xsl:with-param name="in" select="$in/@nullFlavor"/>
-                    </xsl:call-template>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:if>
-    </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -16131,6 +15730,7 @@
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>SDTC defines sdtc:signatureText including a digital signature. XSLT lacks tools to
@@ -16174,6 +15774,7 @@
         <xsl:variable name="month" select="substring($date, 5, 2)"/>
         <xsl:value-of select="$month"/>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -16264,6 +15865,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -16449,7 +16051,6 @@
             </xsl:choose>
         </xsl:if>
     </xsl:template>
-
 
 
     <xd:doc>
@@ -16736,6 +16337,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Get someones age based on the difference between 'date' and <xd:ref
@@ -16795,6 +16397,7 @@
         </xsl:choose>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Convert Telecom URI scheme (tel, fax, http, mailto) to display text</xd:p>
@@ -16833,6 +16436,7 @@
         </xsl:choose>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Converts Latin characters in input to lower case and returns the result</xd:p>
@@ -16848,6 +16452,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Converts Latin characters in input to upper case and returns the result</xd:p>
@@ -16862,6 +16467,7 @@
             />
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -16879,6 +16485,7 @@
             <xsl:value-of select="substring($data, 2)"/>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -16915,6 +16522,7 @@
         </xsl:choose>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Tokenize every character</xd:p>
@@ -16947,6 +16555,7 @@
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -17006,10 +16615,12 @@
         </xsl:choose>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>Index the translation file for performance</xd:desc>
     </xd:doc>
     <xsl:key name="util-i18nkey" match="translation" use="@key"/>
+
 
     <xd:doc>
         <xd:desc>
@@ -17067,6 +16678,7 @@
         </xsl:for-each>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>Helper template for calculation of CSS font sizes. Takes <xd:ref
@@ -17114,6 +16726,7 @@
         </xsl:if>
     </xsl:template>
 
+
     <xd:doc>
         <xd:desc>
             <xd:p>generate revision toggle</xd:p>
@@ -17137,6 +16750,7 @@
             </td>
         </xsl:if>
     </xsl:template>
+
 
     <xd:doc>
         <xd:desc>
@@ -17257,7 +16871,11 @@
     </xsl:template>
 
     <xd:doc>
-        <xd:desc/>
+        <xd:doc>
+            <xd:desc>
+                <xd:p>telecom patient</xd:p>
+            </xd:desc>
+        </xd:doc>
         <xd:param name="telecom"/>
     </xd:doc>
     <xsl:template name="show-telecom-patient">
