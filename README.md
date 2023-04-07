@@ -7,13 +7,13 @@
 
 2. [Introduction](#Introduction)
 
-3. [Solutions pour la génération d’un document PDF](#Solutions pour la génération d’un document PDF)
+3. [Solutions pour la génération d’un document PDF](#Solutions-pour-la-génération-d’un-document-PDF)
 
-4. [Schéma de fonctionnement](#Schéma de fonctionnement)
+4. [Schéma de fonctionnement](#Schéma-de-fonctionnement)
 
-5. [Procédure de génération d’un fichier PDF](#Procédure de génération d’un fichier PDF)
+5. [Procédure de génération d’un fichier PDF](#Procédure-de génération-d’un-fichier-PDF)
 
-6. [Historique des évolutions](#Historique des évolutions)
+6. [Historique des évolutions](#Historique-des-évolutions)
 
 
 ## ***Objet du document***  
