@@ -66,12 +66,12 @@ Les étapes pour générer le PDF sont les suivantes :
 2) Ouvrir l’invite de commande «cmd» et se positionner dans le dossier fop de fop-2.8 :   
 
 
-|<p>>cd [Chemin\_du\_dossier]\fop-2.8-bin\fop-2.8\fop</p><p></p>|
+|>cd [Chemin\_du\_dossier]\fop-2.8-bin\fop-2.8\fop|
 | - |
 
 3) Lancer la commande ci-dessous pour générer le document PDF :  
 
-|<p>>fop -xml [Chemin\_du\_document\_XML\nom du fichier XML] -xsl [Chemin\_de\_la\_feuille\_de\_style\_XSL\CDA-FO.xsl] -pdf [Chemin\_où\_générer\_le\_PDF]\[nom\_à\_donner\_au\_PDF].pdf</p><p></p>|
+|>fop -xml [Chemin\_du\_document\_XML\nom du fichier XML] -xsl [Chemin\_de\_la\_feuille\_de\_style\_XSL\CDA-FO.xsl] -pdf [Chemin\_où\_générer\_le\_PDF]\[nom\_à\_donner\_au\_PDF].pdf|
 | - |
 
 4) Le fichier XSL appelé en ligne de commande est notre feuille de style créé avec XSL-FO.  
