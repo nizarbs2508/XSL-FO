@@ -1,69 +1,105 @@
-# Génération PDF avec XSL-FO et FOP
+|![](Aspose.Words.61f61232-83b2-473f-9708-78d507c6915f.001.png)|Procédure de génération de PDF – XSL-FO|07/04/2023|
+| :-: | :-: | :-: |
 
-
-## Introduction
-XSL-FO est XSL Formatting Objects et peut être utilisé pour formater des données XML.
-
-Apache FOP (Formatting Objects Processor) est une application Java qui lit une arborescence d'objets de formatage et restitue les pages résultantes vers une sortie spécifiée.
-## Comment ça fonctionne
-
-![](https://github.com/nizarbs2508/XSL-FO/blob/main/img.jpeg)
-
-
-## Solutions pour la génération d’un document PDF
-La feuille de style créé par l’ANS contient deux mécanismes :
-
-- Un mécanisme qui génère la feuille de style standard pour afficher les documents CDA en mode web avec un désigne qui correspond au désigne de HL7.
-- Un mécanisme XSL-FO pour afficher le document CDA avec le même désigne HL7 mais en mode PDF.
-
-Nous allons expliquer dans notre document la procédure de génération du document PDF (développer avec XSL-FO) avec le projet Apache FOP.
-
-La feuille de style ANS est livrée avec un package qui contient les .jar de FOP ainsi que les .jar utilisés pour l’affichage de la Datamatrix.
-
-Plusieurs solutions sont mis en place soit pour la génération du PDF soit pour la génération de la Datamatrix. Parmi les différentes solutions trouvées sur le marché pour générer un document PDF on trouve **Saxon, XSL-FO + FOP, Aspose, DOM, SAX, ALTOVA**. FOP utilise aussi des jars Saxon pour créer le document PDF. Saxon présente trois solutions, deux payantes (**Saxon-PE et Saxon-EE**) et une solution gratuite (**Saxon-HE**). La solution Saxon-HE possède des jars commerciaux gratuites qui peuvent être intégrer au package FOP pour générer gratuitement un document FOP développer avec XSL-FO.    
-
-Les autres projets aussi tels que Aspose et ALTOVA sont payantes.
-
-D’autres jars ont été utilisé pour afficher la Datamatrix dans le document PDF. 
-
-Dans notre cas nous avons utilisé une solution payante, c’est le projet **J4L**. 
-
-J4L utilise quatre fichiers jars pour générer la Datamatrix ou même un code à barre. C’est trois jars sont rbarcode.jar, qrcode.jar, rbarcode-fop.jar et rbarcode-fop2.jar. Cette solution est payante.
-
-` `D’autres solutions sont présentent sur le marché tel que **Barcode4J de Apache et Barcode Generator de Altenna House**. 
-
-Notre solution est basé alors sur **XSL-FO** pour construire et structurer la feuille de style, **FOP** pour générer le fichier PDF et  **RBarcode de J4L** pour générer la Datamatrix.
-
-## Procédure de génération d’un fichier PDF
-
-- Dézipper le fichier fop-2.8.zip livré avec la feuille de style ANS. Nous avons utilisé la version 2.8 de FOP pour la génération du PDF. 
-
-Le dossier FOP contient mise à part ces fichiers jar, les quatre jars mentionné précédemment pour l’affichage de la Datamatrix.
-
-
-
-- Ouvrir l’invite de commande « cmd » et se positionner dans le dossier fop de fop-2.8 :
-
-
-|<p># cd path\_to\_fop\_folder\fop-2.8-bin\fop-2.8\fop</p><p></p>|
-| :- |
-
-
-- Lancer la commande ci-dessous pour générer le document PDF :
-
-|<p># fop -xml \path\_to\_xml\_file\ANEST-CR-ANEST\_2022.01.xml -xsl \path\_to\_xsl\_file\CDA-FO.xsl -pdf \path\_to\_output\_pdf\_file\output.pdf</p><p></p>|
-| :- |
-
-- Le fichier XSL appelé en ligne de commande est notre feuille de style créé avec XSL-FO.
-
-- Un fichier PDF est généré en sortie après le lancement de la commande.
-
-## Conclusion
-
-Toutes les solutions de génération de fichier PDF avec XSL sont maintenable et facile à implémenté avec des bonnes connaissance en XSLT et XSL-FO. Notre choix a été fait sur XSL-FO + FOP vu que 
-
-XSL-FO une est un langage open source compatible avec Apache FOP qui est aussi un projet open source.
+![](Aspose.Words.61f61232-83b2-473f-9708-78d507c6915f.002.png)![](Aspose.Words.61f61232-83b2-473f-9708-78d507c6915f.003.png)
 
 
 
 
+|<p><a name="ole_link1"></a><a name="ole_link2"></a>RÉFÉRENTIELS</p><p>Cadre d'interopérabilité des SIS - Couche Contenus</p><p>NOTICE</p><p>Feuille de style</p><p>**Procédure de Génération PDF avec XSL-FO et FOP**</p><p>07/04/2023</p>|
+| - |
+
+![](Aspose.Words.61f61232-83b2-473f-9708-78d507c6915f.004.png)
+
+**Sommaire**
+
+[1	Objet du document	3](#_toc131776339)
+
+[2	Introduction	3](#_toc131776340)
+
+[3	Solutions pour la génération d’un document PDF	3](#_toc131776341)
+
+[4	Schéma de fonctionnement	4](#_toc131776342)
+
+[5	Procédure de génération d’un fichier PDF	4](#_toc131776343)
+
+[6	Historique des évolutions	5](#_toc131776344)
+
+
+1. # **<a name="_toc131776339"></a>Objet du document**
+Ce document décrit la procédure de génération d’un PDF à partir d’une feuille de style en utilisant XSL-FO
+1. # <a name="_toc131776340"></a>**Introduction**
+XSL-FO qui veut dire XSL Formatting Objects est un langage de mise en forme de documents XML pour tous les supports tel que sur un viewer pour l’affichage ou en PDF pour l’impression
+
+Apache FOP (Formatting Objects Processor) est une API Java qui lit une arborescence d'objets de formatage et restitue les pages résultantes vers une sortie spécifiée.
+1. # <a name="_toc131776341"></a>**Solutions pour la génération d’un document PDF**
+La feuille de style de l’ANS contient deux mécanismes :
+
+- **Un mécanisme pour l’affichage en mode WEB** qui permet d’afficher un document CDA à l’écran conformément à la feuille de style de l’ANS (qui est une adaptation de la feuille de style publiée par HL7).
+- **Un mécanisme XSL-FO pour la génération d’un document PDF** (éventuellement pour impression) identique à l’affichage écran à partir du document CDA.
+
+La feuille de style ANS est livrée avec un package qui contient les archives FOP ainsi que les archives utilisées pour l’affichage du Datamatrix INS.
+
+La feuille de style de l’ANS utilise :
+
+- **XSL-FO** pour construire et structurer la feuille de style
+- **FOP** pour générer le fichier PDF 
+- **RBarcode de J4L** pour générer le Datamatrix.
+
+**Pour la génération du PDF :**
+
+Plusieurs solutions permettent la génération du PDF : **XSL-FO + FOP, Saxon, Aspose, DOM, SAX**, **ALTOVA**, etc…
+
+La feuille de style de l’ANS utilise **XSL-FO + FOP.**
+
+**FOP** utilise aussi des archives Saxon. Saxon propose trois solutions : **Saxon-PE, Saxon-EE et Saxon-HE**. 
+
+La feuille de style de l’ANS utilise une archive de **Saxon-HE.**
+
+**Pour la génération du Datamatrix :**
+
+Plusieurs solutions permettent la génération du datamatrix : **Barcode4J** d’Apache** et **Barcode Generator** d’Altenna House, etc…
+
+La feuille de style de l’ANS utilise **Barcode4J**.
+
+**Barcode4J** utilise quatre archives pour générer le Datamatrix : **rbarcode.jar, qrcode.jar, rbarcode-fop.jar** et **rbarcode-fop2.jar**.
+
+
+1. # <a name="_toc131776342"></a>**Schéma de fonctionnement**
+
+![Une image contenant diagramme
+
+Description générée automatiquement](Aspose.Words.61f61232-83b2-473f-9708-78d507c6915f.005.jpeg)
+
+1. # <a name="_toc131776343"></a>**Procédure de génération d’un fichier PDF**
+
+<a name="_toc122352536"></a>Les étapes pour générer le PDF sont les suivantes :
+
+1) Dézipper l’archive **fop-2.8-bin.zip** livrée avec la feuille de style ANS.
+   - Le dossier FOP contient les archives de génération du datamatrix en plus de ceux pour la génération des PDF
+
+1) Ouvrir l’invite de commande «cmd» et se positionner dans le dossier fop de fop-2.8 :
+
+
+|<p>>cd [Chemin\_du\_dossier]\fop-2.8-bin\fop-2.8\fop</p><p></p>|
+| - |
+
+1) Lancer la commande ci-dessous pour générer le document PDF :
+
+|<p>>fop -xml [Chemin\_du\_document\_XML\nom du fichier XML] -xsl [Chemin\_de\_la\_feuille\_de\_style\_XSL\CDA-FO.xsl] -pdf [Chemin\_où\_générer\_le\_PDF]\[nom\_à\_donner\_au\_PDF].pdf</p><p></p>|
+| - |
+
+1) Le fichier XSL appelé en ligne de commande est notre feuille de style créé avec XSL-FO.
+
+1) Un fichier PDF est généré en sortie après le lancement de la commande.
+
+
+1. # <a name="_toc131776344"></a>**Historique des évolutions**
+
+
+|**Date de publication**|**Version**|**Modifications apportées**|
+| :-: | :- | :- |
+|07/04/2023|V0.1|Création|
+
+**\*\*\* FIN DU DOCUMENT \*\*\***
+Notice ***Feuille de style***		5 / 5
