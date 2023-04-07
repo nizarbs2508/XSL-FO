@@ -85,6 +85,3 @@ Les étapes pour générer le PDF sont les suivantes :
 |**Date de publication**|**Version**|**Modifications apportées**|
 | :-: | :- | :- |
 |07/04/2023|V0.1|Création|
-
-**\*\*\* FIN DU DOCUMENT \*\*\***   
-Notice ***Feuille de style***		5 / 5
