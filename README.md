@@ -15,7 +15,7 @@
 [6	Historique des évolutions	5](#_toc131776344)
 
 
-***Objet du document*** 
+***Objet du document***  
 Ce document décrit la procédure de génération d’un PDF à partir d’une feuille de style en utilisant XSL-FO
 
 ***Introduction*** 
