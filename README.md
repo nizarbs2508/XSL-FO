@@ -72,7 +72,7 @@ Les étapes pour générer le PDF sont les suivantes :
 
 3) Lancer la commande ci-dessous pour générer le document PDF :  
 
-<p align="left">|>fop -xml [Chemin\_du\_document\_XML\nom du fichier XML] -xsl [Chemin\_de\_la\_feuille\_de\_style\_XSL\CDA-FO.xsl] -pdf [Chemin\_où\_générer\_le\_PDF]\[nom\_à\_donner\_au\_PDF].pdf|</p>
+|>fop -xml [Chemin\_du\_document\_XML\nom du fichier XML] -xsl [Chemin\_de\_la\_feuille\_de\_style\_XSL\CDA-FO.xsl] -pdf [Chemin\_où\_générer\_le\_PDF]\[nom\_à\_donner\_au\_PDF].pdf|
 | - |
 
 4) Le fichier XSL appelé en ligne de commande est notre feuille de style créé avec XSL-FO.  
