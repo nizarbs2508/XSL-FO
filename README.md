@@ -3,28 +3,28 @@
   
 ***Sommaire***
 
-[1	Objet du document	3](#_toc131776339)
+1. [Objet du document](#Objet du document)
 
-[2	Introduction	3](#_toc131776340)
+2. [Introduction](#Introduction)
 
-[3	Solutions pour la génération d’un document PDF	3](#_toc131776341)
+3. [Solutions pour la génération d’un document PDF](#Solutions pour la génération d’un document PDF)
 
-[4	Schéma de fonctionnement	4](#_toc131776342)
+4. [Schéma de fonctionnement](#Schéma de fonctionnement)
 
-[5	Procédure de génération d’un fichier PDF	4](#_toc131776343)
+5. [Procédure de génération d’un fichier PDF](#Procédure de génération d’un fichier PDF)
 
-[6	Historique des évolutions	5](#_toc131776344)
+6. [Historique des évolutions](#Historique des évolutions)
 
 
-***Objet du document***  
+## ***Objet du document***  
 Ce document décrit la procédure de génération d’un PDF à partir d’une feuille de style en utilisant XSL-FO
 
-***Introduction***  
+## ***Introduction***  
 XSL-FO qui veut dire XSL Formatting Objects est un langage de mise en forme de documents XML pour tous les supports tel que sur un viewer pour l’affichage ou en PDF pour l’impression  
 
 Apache FOP (Formatting Objects Processor) est une API Java qui lit une arborescence d'objets de formatage et restitue les pages résultantes vers une sortie spécifiée.
 
-***Solutions pour la génération d’un document PDF***   
+## ***Solutions pour la génération d’un document PDF***   
 La feuille de style de l’ANS contient deux mécanismes :  
 
  **Un mécanisme pour l’affichage en mode WEB** qui permet d’afficher un document CDA à l’écran conformément à la feuille de style de l’ANS (qui est une adaptation de la feuille de style publiée par HL7).  
@@ -54,10 +54,10 @@ La feuille de style de l’ANS utilise **Barcode4J**.
 
 **Barcode4J** utilise quatre archives pour générer le Datamatrix : **rbarcode.jar, qrcode.jar, rbarcode-fop.jar** et **rbarcode-fop2.jar**.  
 
-***Schéma de fonctionnement***  
+## ***Schéma de fonctionnement***  
 ![](https://github.com/nizarbs2508/XSL-FO/blob/main/img.jpeg)
 
-***Procédure de génération d’un fichier PDF***    
+## ***Procédure de génération d’un fichier PDF***    
 
 Les étapes pour générer le PDF sont les suivantes :   
 
@@ -79,7 +79,7 @@ Les étapes pour générer le PDF sont les suivantes :
 
 5) Un fichier PDF est généré en sortie après le lancement de la commande.  
 
-***Historique des évolutions***  
+## ***Historique des évolutions***  
 
 
 |**Date de publication**|**Version**|**Modifications apportées**|
