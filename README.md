@@ -57,7 +57,7 @@ La feuille de style de l’ANS utilise **Barcode4J**.
 ***Schéma de fonctionnement***  
 ![](https://github.com/nizarbs2508/XSL-FO/blob/main/img.jpeg)
 
-***Procédure de génération d’un fichier PDF**  
+***Procédure de génération d’un fichier PDF***    
 
 Les étapes pour générer le PDF sont les suivantes :   
 
