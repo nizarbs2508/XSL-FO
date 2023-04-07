@@ -1,7 +1,4 @@
-<p>**Procédure de Génération PDF avec XSL-FO et FOP**</p><p>07/04/2023</p>|
-| - |
-
-![](Aspose.Words.61f61232-83b2-473f-9708-78d507c6915f.004.png)
+**Procédure de Génération PDF avec XSL-FO et FOP**
 
 **Sommaire**
 
