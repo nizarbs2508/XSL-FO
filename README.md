@@ -1,4 +1,4 @@
-[center]**Procédure de Génération PDF avec XSL-FO et FOP**[center]
+[center]**Procédure de Génération PDF avec XSL-FO et FOP**[/center]
 
 ***Sommaire***
 
