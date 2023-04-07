@@ -3,17 +3,17 @@
   
 ## ***Sommaire***
 
-1. [Objet du document](#Objet-du-document)
+[Objet du document](#Objet-du-document)
 
-2. [Introduction](#Introduction)
+[Introduction](#Introduction)
 
-3. [Solutions pour la génération d’un document PDF](#Solutions-pour-la-génération-d’un-document-PDF)
+[Solutions pour la génération d’un document PDF](#Solutions-pour-la-génération-d’un-document-PDF)
 
-4. [Schéma de fonctionnement](#Schéma-de-fonctionnement)
+[Schéma de fonctionnement](#Schéma-de-fonctionnement)
 
-5. [Procédure de génération de fichier PDF](#Procédure-de-génération-de-fichier-PDF)
+[Procédure de génération de fichier PDF](#Procédure-de-génération-de-fichier-PDF)
 
-6. [Historique des évolutions](#Historique-des-évolutions)
+[Historique des évolutions](#Historique-des-évolutions)
 
 
 ## ***Objet du document***  
