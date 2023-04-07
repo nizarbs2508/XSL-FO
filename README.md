@@ -54,7 +54,7 @@ La feuille de style de l’ANS utilise **Barcode4J**.
 **Barcode4J** utilise quatre archives pour générer le Datamatrix : **rbarcode.jar, qrcode.jar, rbarcode-fop.jar** et **rbarcode-fop2.jar**.  
 
 ***Schéma de fonctionnement***  
-Description générée automatiquement](Aspose.Words.61f61232-83b2-473f-9708-78d507c6915f.005.jpeg)  
+[](https://github.com/nizarbs2508/XSL-FO/blob/main/img.jpeg)
 
 ***Procédure de génération d’un fichier PDF**  
 
