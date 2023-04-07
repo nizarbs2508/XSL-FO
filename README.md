@@ -1,9 +1,9 @@
-**Procédure de Génération PDF avec XSL-FO et FOP**  
+# **Procédure de Génération PDF avec XSL-FO et FOP**  
   
   
-***Sommaire***
+## ***Sommaire***
 
-1. [Objet du document](#Objet du document)
+1. [Objet du document](#Objet-du-document)
 
 2. [Introduction](#Introduction)
 
