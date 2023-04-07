@@ -1,12 +1,4 @@
-|![](Aspose.Words.61f61232-83b2-473f-9708-78d507c6915f.001.png)|Procédure de génération de PDF – XSL-FO|07/04/2023|
-| :-: | :-: | :-: |
-
-![](Aspose.Words.61f61232-83b2-473f-9708-78d507c6915f.002.png)![](Aspose.Words.61f61232-83b2-473f-9708-78d507c6915f.003.png)
-
-
-
-
-|<p><a name="ole_link1"></a><a name="ole_link2"></a>RÉFÉRENTIELS</p><p>Cadre d'interopérabilité des SIS - Couche Contenus</p><p>NOTICE</p><p>Feuille de style</p><p>**Procédure de Génération PDF avec XSL-FO et FOP**</p><p>07/04/2023</p>|
+<p>**Procédure de Génération PDF avec XSL-FO et FOP**</p><p>07/04/2023</p>|
 | - |
 
 ![](Aspose.Words.61f61232-83b2-473f-9708-78d507c6915f.004.png)
