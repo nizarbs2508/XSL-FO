@@ -11,7 +11,7 @@
 
 4. [Schéma de fonctionnement](#Schéma-de-fonctionnement)
 
-5. [Procédure de génération d'un fichier PDF](#Procédure-de-génération-d'un-fichier-PDF)
+5. [Procédure de génération d'un fichier PDF](#Procédure-de-génération-d-'-un-fichier-PDF)
 
 6. [Historique des évolutions](#Historique-des-évolutions)
 
